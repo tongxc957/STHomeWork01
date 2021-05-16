@@ -3,103 +3,112 @@ package student;
 import java.util.Scanner;
 
 public class StudentManager {
-	static Student[] Stu=new Student[20];//å®šä¹‰å­¦ç”Ÿæ•°ç»„ï¼Œå®¹é‡ä¸º20
-	  static  int number=0;
-	  static Scanner scanner=new Scanner(System.in);
+	
+	static Student[] Stu=new Student[20];//¶¨ÒåÑ§ÉúÊı×é£¬ÈİÁ¿Îª20
+	static  int number=0;
+	static Scanner scanner=new Scanner(System.in);
 
 
-public static void add(){//æ·»åŠ å­¦ç”Ÿä¿¡æ¯
-while(true){
-System.out.println("ç‚¹å‡»ä»»æ„é”®ç»§ç»­æ·»åŠ å­¦ç”Ÿä¿¡æ¯ï¼Œåœæ­¢æ·»åŠ è¾“å…¥6");
-if(scanner.nextInt()==6)break;
-Stu[number]=new Student();
-System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„å­¦å·\n");
-Stu[number].setID(scanner.next());
-System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„å§“å\n");
-Stu[number].setName(scanner.next());
-System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„æ€§åˆ«\n");
-Stu[number].setGender(scanner.next());
-System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿçš„å‡ºç”Ÿæ—¥æœŸ\n");
-Stu[number].setAge(scanner.next());
-number++;
-paixu();
-System.out.println("æ·»åŠ æˆåŠŸ");
-}
-}
-
-
-public static void show(){//å±•ç¤ºå­¦ç”Ÿä¿¡æ¯
-    System.out.println("*******************************************");
-    System.out.println(" å­¦å·             å§“å                          æ€§åˆ«              å‡ºç”Ÿæ—¥æœŸ             ");
-    paixu();
-    for(int i=0;i<number;i++)
-   System.out.println(Stu[i].getID()+"\t"+Stu[i].getName()+"\t"+"\t"+Stu[i].getGender()+"\t"+Stu[i].getAge()+"\t");
-    System.out.println("*******************************************");
-System.out.println();
-}
-
-public static void paixu(){//å¯¹å­¦ç”Ÿä¿¡æ¯è¿›è¡Œæ’åº
-    int j;
-    Student temp=new Student();
-    for(int i=0;i<number;i++)
-    {
-        for(j=i+1;j<number;j++) {
-        int m=Integer.parseInt(Stu[j].getID());
-        int n=Integer.parseInt(Stu[i].getID());
-        if(m>n)
-        {temp=Stu[i];Stu[i]=Stu[j];Stu[j]=temp;}
-    }
-    }
-}
-
-
-public static void change(){//æ”¹å˜å­¦ç”Ÿä¿¡æ¯
-System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹ä¿¡æ¯çš„å­¦ç”Ÿå§“å");
-String Stunumber=scanner.next();
-for(int i=0;i<number;i++)
-{
-    if(Stunumber.equals(Stu[i].getName()))
-    {System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„å­¦ç”Ÿçš„ä¿¡æ¯,å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«ï¼Œå‡ºç”Ÿæ—¥æœŸ");
-     Stu[i].setID(scanner.next());
-        Stu[i].setName(scanner.next());
-        Stu[i].setGender(scanner.next());
-        Stu[i].setAge( scanner.next());
-      
-        break;
-    }
-}
-paixu();
-}
-
-public static void query(){//æŸ¥è¯¢
-  System.out.println("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„å­¦ç”Ÿ");
-   String Stunumber=scanner.next();
-   int i;
-    for(i=0;i<number;i++)
-    {
-        if(Stunumber.equals(Stu[i].getName())){
-            System.out.println("*******************************************");
-            System.out.println(" å­¦å·             å§“å                          æ€§åˆ«              å‡ºç”Ÿæ—¥æœŸ             ");
-            System.out.println(Stu[i].getID()+"\t"+Stu[i].getName()+"\t"+"\t"+Stu[i].getGender()+"\t"+Stu[i].getAge());
-            System.out.println("*******************************************");
-        }
- 
-    }
-    paixu();
-}
-
-
-public static void delete(){//åˆ é™¤å­¦ç”Ÿä¿¡æ¯
-System.out.println("è¯·è¾“å…¥è¦åˆ é™¤ä¿¡æ¯çš„å­¦ç”Ÿå§“å");
-String Stunumber=scanner.next();
-int i;
-    for( i=0;i<number;i++)
-    if(Stunumber.equals(Stu[i].getName()))break; 
-for(;i<number-1;i++)
-    Stu[i]=Stu[i+1];
-     number--;
-System.out.println("åˆ é™¤å®Œæˆ");
-paixu();
-}
+	public static void Add(){//Ìí¼ÓÑ§ÉúĞÅÏ¢ public static void add()
+		while(true){
+			
+			System.out.println("µã»÷ÈÎÒâ¼ü¼ÌĞøÌí¼ÓÑ§ÉúĞÅÏ¢£¬Í£Ö¹Ìí¼ÓÊäÈë0");
+			if(scanner.nextInt()==0)break;
+			Stu[number]=new Student();
+			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúµÄÑ§ºÅ\n");
+			Stu[number].setID(scanner.next());
+			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúµÄĞÕÃû\n");
+			Stu[number].setName(scanner.next());
+			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúµÄĞÔ±ğ\n");
+			Stu[number].setGender(scanner.next());
+			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúµÄ³öÉúÈÕÆÚ\n");
+			Stu[number].setAge(scanner.next());
+			number++;
+			Sort();
+		System.out.println("Ìí¼Ó³É¹¦");
+		
+		}
+	}
+	
+	
+	public static void Show(){//Õ¹Ê¾Ñ§ÉúĞÅÏ¢ public static void show()
+		
+	    System.out.println("*******************************************");
+	    System.out.println(" Ñ§ºÅ             ĞÕÃû                          ĞÔ±ğ              ³öÉúÈÕÆÚ             ");
+	    Sort();
+	    for(int i=0;i<number;i++)
+	    	System.out.println(Stu[i].getID()+"\t"+Stu[i].getName()+"\t"+"\t"+Stu[i].getGender()+"\t"+Stu[i].getAge()+"\t");
+	    System.out.println("*******************************************");
+	    System.out.println();
+	    
+	}
+	
+	public static void Sort(){//¶ÔÑ§ÉúĞÅÏ¢½øĞĞÅÅĞò public static void paixu()
+		
+	    int j;
+	    Student temp=new Student();
+	    for(int i=0;i<number;i++)
+	    {
+	        for(j=i+1;j<number;j++) {
+	        int m=Integer.parseInt(Stu[j].getID());
+	        int n=Integer.parseInt(Stu[i].getID());
+	        if(m>n)
+	        {temp=Stu[i];Stu[i]=Stu[j];Stu[j]=temp;}
+	    }
+	        
+	    }
+	}
+	
+	
+	public static void Change(){//¸Ä±äÑ§ÉúĞÅÏ¢public static void change()
+		
+	System.out.println("ÇëÊäÈëÒªĞŞ¸ÄĞÅÏ¢µÄÑ§ÉúĞÕÃû");
+	String Stunumber=scanner.next();
+	for(int i=0;i<number;i++)
+	{
+	    if(Stunumber.equals(Stu[i].getName()))
+	    {System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄÑ§ÉúµÄĞÅÏ¢,Ñ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ£¬³öÉúÈÕÆÚ");
+	     Stu[i].setID(scanner.next());
+	        Stu[i].setName(scanner.next());
+	        Stu[i].setGender(scanner.next());
+	        Stu[i].setAge( scanner.next());
+	      
+	        break;
+	    }
+	}
+	Sort();
+	
+	}
+	
+	public static void Query(){//²éÑ¯public static void query()
+	  System.out.println("ÇëÊäÈëÒª²éÑ¯µÄÑ§Éú");
+	   String Stunumber=scanner.next();
+	   int i;
+	    for(i=0;i<number;i++)
+	    {
+	        if(Stunumber.equals(Stu[i].getName())){
+	            System.out.println("*******************************************");
+	            System.out.println(" Ñ§ºÅ             ĞÕÃû                          ĞÔ±ğ              ³öÉúÈÕÆÚ             ");
+	            System.out.println(Stu[i].getID()+"\t"+Stu[i].getName()+"\t"+"\t"+Stu[i].getGender()+"\t"+Stu[i].getAge());
+	            System.out.println("*******************************************");
+	        }
+	 
+	    }
+	    Sort();
+	}
+	
+	
+	public static void Delete(){//É¾³ıÑ§ÉúĞÅÏ¢	public static void delete()
+	System.out.println("ÇëÊäÈëÒªÉ¾³ıĞÅÏ¢µÄÑ§ÉúĞÕÃû");
+	String Stunumber=scanner.next();
+	int i;
+	    for( i=0;i<number;i++)
+	    if(Stunumber.equals(Stu[i].getName()))break; 
+	for(;i<number-1;i++)
+	    Stu[i]=Stu[i+1];
+	     number--;
+	System.out.println("É¾³ıÍê³É");
+	Sort();
+	}
 
 }

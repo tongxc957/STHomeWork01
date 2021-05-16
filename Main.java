@@ -7,25 +7,25 @@ public class Main {
 		int choice;
 		Scanner sc=new Scanner(System.in);
 		while(true){
-		System.out.println("*******************************************************");
-		System.out.println("*                    1.æ’å…¥                            *");
-		System.out.println("*                    2.æŸ¥æ‰¾                            *");
-		System.out.println("*                    3.åˆ é™¤                            *");
-		System.out.println("*                    4.ä¿®æ”¹                            *");
-		System.out.println("*                    5.è¾“å‡º                            *");  
-		System.out.println("*                    6.é€€å‡º                            *");
-		System.out.println("*******************************************************\n");
+			System.out.println("*******************************************************");
+			System.out.println("*                    1.²åÈë                            *");
+			System.out.println("*                    2.²éÕÒ                            *");
+			System.out.println("*                    3.É¾³ı                            *");
+			System.out.println("*                    4.ĞŞ¸Ä                            *");
+			System.out.println("*                    5.Êä³ö                            *");  
+			System.out.println("*                    6.ÍË³ö                            *");
+			System.out.println("*******************************************************\n");
 		choice=sc.nextInt();
 		if(choice==6)break;
 		switch(choice){
-		case 1:    StudentManager.add(); break;//æ’å…¥å­¦ç”Ÿä¿¡æ¯
-		case 2:    StudentManager.query() ;break;//æŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯
-		case 3:    StudentManager.delete();break;//åˆ é™¤å­¦ç”Ÿä¿¡æ¯
-		case 4:    StudentManager.change();break;//ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
-		case 5:    StudentManager.show();break;//è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
-		}       
+			case 1:    StudentManager.Add(); break;//²åÈëÑ§ÉúĞÅÏ¢
+			case 2:    StudentManager.Query() ;break;//²éÕÒÑ§ÉúĞÅÏ¢
+			case 3:    StudentManager.Delete();break;//É¾³ıÑ§ÉúĞÅÏ¢
+			case 4:    StudentManager.Change();break;//ĞŞ¸ÄÑ§ÉúĞÅÏ¢
+			case 5:    StudentManager.Show();break;//Êä³öÑ§ÉúĞÅÏ¢
+				}       
+			}
+		System.out.println("¸ĞĞ»Äú¶Ô±¾ÏµÍ³µÄÊ¹ÓÃ£¬»¶Ó­ÏÂ´Î¼ÌĞøÊ¹ÓÃ");
 		}
-		System.out.println("æ„Ÿè°¢æ‚¨å¯¹æœ¬ç³»ç»Ÿçš„ä½¿ç”¨ï¼Œæ¬¢è¿ä¸‹æ¬¡ç»§ç»­ä½¿ç”¨");
-		}
-
+	
 }
